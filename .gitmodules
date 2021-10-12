@@ -42,13 +42,6 @@
 	path = libusb_android
 	url = https://github.com/jjustman/libusb_android.git
 
-# jjustman-2020-11-30 - all modules below here are not available for 3rd party re-distribution
-[submodule "saankhyalabs-slsdk"]
-	path = saankhyalabs-slsdk
-	url = https://dev.azure.com/NGWP/Mark%20One%20Phone/_git/saankhyalabs-slsdk
-	branch = slsdk-pre-0.16-jj
-	
-	
 	
 [submodule "libusb_android"]
 	path = libusb_android
@@ -61,16 +54,6 @@
 [submodule "vcpkg"]
 	path = vcpkg
 	url = https://github.com/microsoft/vcpkg.git
-
-[submodule "libdaa"]
-	path = libdaa
-	url = https://dev.azure.com/NGWP/Middleware/_git/libdaa
-[submodule "codornicesrq"]
-	path = codornicesrq
-	url = https://dev.azure.com/NGWP/Middleware/_git/codornicesrq
-[submodule "airwavz_redzone_sdk"]
-	path = airwavz_redzone_sdk
-	url = https://dev.azure.com/NGWP/Middleware/_git/airwavz_redzone_sdk
 
 [submodule "openssl"]
 	path = openssl

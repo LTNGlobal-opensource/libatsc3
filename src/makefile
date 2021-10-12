@@ -87,7 +87,6 @@ all: 	intermediate_lls \
 		intermediate_a337 \
 		intermediate_a344 \
 		intermediate_ffplay \
-		intermediate_virtual_phy \
 		intermediate_smime \
 		interemediate_gpl_and_mock_linkage  \
 		libatsc3_core   \
@@ -95,9 +94,7 @@ all: 	intermediate_lls \
 		libmicrohttpd_tests \
 		listener_tests \
 		a324_tests \
-		phy_tests \
-		tools \
-		atsc3_sl_phy
+		tools 
 
 clean:
 	-rm -f *.o
@@ -224,11 +221,6 @@ intermediate_a344:	atsc3_a344_receiver_query_api.o
 
 intermediate_ffplay: atsc3_player_ffplay.o
 
-intermediate_virtual_phy: 	PcapDemuxedVirtualPHY.o \
-				 			PcapSTLTPVirtualPHY.o \
-				 			atsc3_srt_live_receiver.o \
-				 			SRTRxSTLTPVirtualPHY.o
-
 intermediate_smime:	atsc3_smime_utils.o	  
 
 interemediate_gpl_and_mock_linkage: bento4_gpl_link \
@@ -301,8 +293,6 @@ tools: tools/atsc3_listener_metrics_ncurses \
 	tools/atsc3_alc_listener_mde_writer_from_stltp_pcap \
 	tools/atsc3_alc_listener_mde_writer_from_stltp_pcap_asan \
 	tools/atsc3_mmt_listener_to_http_hls_fmp4 \
-	tools/atsc3_srt_rx_stltp_virtual_phy_alc_listener_writer \
-	tools/atsc3_srt_rx_stltp_virtual_phy_alc_listener_writer_noasan \
 	tools/atsc3_pcap_stltp_preamble_timing_management_validate \
 	tools/atsc3_pcap_stltp_preamble_timing_management_validate_asan
 
