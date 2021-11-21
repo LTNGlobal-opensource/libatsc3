@@ -1,0 +1,21 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: dependencies  
+      run: apt-get update && apt-get install libssl-dev build-essential git net-tools libncurses5-dev libncursesw5-dev libpcre2-dev libpcap-dev cmake zlib1g-dev -y
+    - name: checkout
+      run: git clone --recurse-submodules https://github.com/LTNGlobal-opensource/libatsc3.git --branch develop
+    - name: build
+      run: cd ./libatsc3/src && ./build_linux.sh
+    
