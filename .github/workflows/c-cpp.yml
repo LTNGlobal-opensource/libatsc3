@@ -24,8 +24,11 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y libssl-dev build-essential git net-tools libncurses5-dev libncursesw5-dev libpcre2-dev libpcap-dev cmake zlib1g-dev
-    - name: checkout
-      run: git clone --recurse-submodules https://github.com/LTNGlobal-opensource/libatsc3.git --branch develop
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        ref: develop
+        submodules: 'true'
     - name: build
       run: cd ./libatsc3/src && ./build_linux.sh
     
