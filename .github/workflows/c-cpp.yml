@@ -32,5 +32,5 @@ jobs:
       with:
         name: libatsc3-artifact
         path: |
-          libatsc3/src/listenter_tests/*
-          libatsc3/src/tools/*
+          libatsc3/src/listenter_tests/atsc3_stltp_alp_listener_reflector_test
+          libatsc3/src/tools/atsc3_alc_listener_mde_writer
