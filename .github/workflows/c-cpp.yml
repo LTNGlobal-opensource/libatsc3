@@ -29,7 +29,7 @@ jobs:
     - name: build
       run: cd ./libatsc3/src && ./build_linux.sh 
     - name: prepare artifacts
-      run: mkdir binaries && cp libatsc3/src/listenter_tests/atsc3_stltp_alp_listener_reflector_test binaries && cp libatsc3/src/tools/atsc3_alc_listener_mde_writer binaries
+      run: mkdir binaries && cp libatsc3/src/listener_tests/atsc3_stltp_alp_listener_reflector_test binaries && cp libatsc3/src/tools/atsc3_alc_listener_mde_writer binaries
     - uses: actions/upload-artifact@v2
       with:
         name: libatsc3-artifact
