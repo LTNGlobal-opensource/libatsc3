@@ -16,9 +16,7 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - name: dependencies  
       run: |
@@ -35,3 +33,16 @@ jobs:
         name: libatsc3-artifact
         path: |
           binaries/*
+          
+  deploy:
+    name: docker image build
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: dependencies  
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libssl-dev git net-tools libncurses5-dev libncursesw5-dev libpcre2-dev libpcap-dev zlib1g-dev
+    - uses: actions/download-artifact@v2
+      with:
+        name: libatsc3-artifact
